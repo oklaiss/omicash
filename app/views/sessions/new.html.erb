@@ -1,0 +1,81 @@
+
+      <ul class="nav pull-right" id="loginDropdown">
+      	<li class="dropdown" id="menuLogin">
+      		<span>
+      			<a class="dropdown-toggle btn btn-dark-2" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+      			<div class="dropdown-menu" style="padding:17px;">
+              <%= form_tag '/login' do %>
+
+              Email: <%= text_field_tag :email %>
+              Password: <%= password_field_tag :password %>
+              <%= submit_tag "Submit", class: "btn btn-dark" %>
+
+              <% end %>
+            </div>
+          </span>
+          <span>
+           <%= link_to 'Sign Up', '/signup', class: "btn btn-dark" %>
+         </span>
+       </li>
+     </ul>
+
+     <!-- Header -->
+     <header id="top" class="header">
+       <div class="text-vertical-center">
+        <h1>OmiCash</h1>
+        <h3>Repayment Reminders Made Easy </h3>
+        <br>
+      </div>
+    </header>
+  <!-- Footer -->
+  <footer>
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-lg-10 col-lg-offset-1 text-center">
+  				</h4>
+  				<p>Owen Klaiss</p>
+  				<ul class="list-unstyled">
+  					<!--  <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li> -->
+  					<li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:oklaiss@smu.edu">oklaiss@smu.edu</a>
+  					</li>
+  				</ul>
+                      <hr class="small">
+                      <p class="text-muted">Powered by</p>
+                      <%= image_tag("rails-logo.png", :class => "img-responsive img-full", :style => "height:100px; margin:auto;") %>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+
+              <!-- Custom Theme JavaScript -->
+    <!-- <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script> -->

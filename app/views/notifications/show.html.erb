@@ -1,0 +1,34 @@
+<div class="col-md-8 col-md-offset-4" style="margin-top:3%">
+  <p id="notice"><%= notice %></p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card show_notif_card">
+        <div class="card-block">
+          <h3 class="card-title">
+            <b> <%= @notification.name %> </b>
+            <%= link_to '<i class="glyphicon glyphicon-pencil"></i> edit'.html_safe, edit_notification_path(@notification), class:"btn"%>
+          </h3>
+          <p class="card-text">
+            <div class="row">
+              <div class="col-sm-5">
+                <b>Email:</b> <%= @notification.email %> <br>
+                <b>Phone:</b> <%= @notification.phone_number %> <br>
+                <b>Repeat:</b> <%= @notification.duration %> times (every <%= @notification.frequency %> hours) <br>
+                <b>Active:</b> <%= @notification.is_active %>
+              </div>
+              <div class="col-sm-7">
+                (<%= @notification.last_sent || "This message has not been sent yet" %>) <br>
+                <b>Message:</b><i> <%= @notification.message_text %> </i>
+              </div>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to 'My Notifications'.html_safe, notifications_path, class:"btn btn-venmo" %>
+
+</div>
+

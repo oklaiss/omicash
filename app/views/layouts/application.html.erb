@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OmiCash</title>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag params[:controller] %>
+	<!-- This sessions link tag is needed to have the home screen images ready on logout -->
+	<%= stylesheet_link_tag 'sessions' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if current_user %>
+  <!-- Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %> -->
+  <%= render 'layouts/navbar' %>
+<% else %>
+  <!-- <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> -->
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

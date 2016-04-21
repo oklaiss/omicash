@@ -1,0 +1,130 @@
+<%= form_for(@notification) do |f| %>
+  <% if @notification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@notification.errors.count, "error") %> prohibited this notification from being saved:</h2>
+
+      <ul>
+      <% @notification.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-sm-9">
+    <div class="card show_notif_card">
+      <div class="card-block">
+        <div class="row">
+          <div class="col col-sm-5">
+            <div class="form omiForm">
+              <div class="form-group">
+                <div class="field">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <%= f.label :Name %>
+                    </div>
+                    <div class="col-sm-9">
+                      <%= f.text_field :name, :required => true, :placeholder => "Name of Recipient" %>
+                    </div>
+                  </div>
+                  </input>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="field">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <%= f.label :email %>
+                    </div>
+                    <div class="col-sm-9">
+                      <%= f.text_field :email, :required => true, :placeholder => "Email Address" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="field">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <%= f.label :Phone %>
+                    </div>
+                    <div class="col-sm-9">
+                      <%= f.text_field :phone_number, :required => true, :placeholder => "Phone Number" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="field">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <%= f.label :frequency %>
+                    </div>
+                  <!-- <%= f.number_field :frequency, :required => true %> hours -->
+                    <div class="col-sm-9">
+                      <%= f.select :frequency, [['Every hour','1'],['Every 2 hours','2'],['Every 4 hours','4'],['Every 12 hours','12'],['Every 24 hours','24']], :required => true %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="field">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <%= f.label :duration %>
+                    </div>
+                <!-- <%= f.number_field :duration, :required => true %> -->
+                    <div class="col-sm-9">
+                      <%= f.select :duration, [['1 Day','24'],['2 Days','48'],['3 Days','72'],['4 Days','96'],['5 Days','120'],['6 Days','144'],['7 Days','168']], :required => true %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- <div class="field">
+                <%= f.label :user_id %><br>
+                <%= f.number_field :user_id %>
+              </div>
+              <div class="field">
+                <%= f.label :is_active %><br>
+                <%= f.check_box :is_active %>
+              </div>
+              <div class="field">
+                <%= f.label :last_sent %><br>
+                <%= f.datetime_select :last_sent %>
+              </div> -->
+            </div> <!--End form-->
+          </div>
+
+        <div class="col col-sm-7">
+          <div class="form omiForm">
+            <div class="form-group">
+              <div class="field">
+                <div class="row">
+                  <div class="col-sm-2">
+                    <%= f.label :Message %>
+                  </div>
+                  <div class="col-sm-10 text-right">
+                    <%= f.text_area :message_text, :required => true, rows:"6", cols:"40" , :placeholder => "Send a personal message"%><br>
+                    <%= f.submit 'Submit', :class=>"btn btn-venmo"%>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="field">
+                <div class="text-right">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div> <!--End Card Block-->
+    </div>
+  </div>
+</div>
+<% end %>
