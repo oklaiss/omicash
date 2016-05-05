@@ -16,7 +16,7 @@
 
 ```
 cd /tmp
-git clone https://github.com/m3thod/omicash.git
+git clone https://github.com/oklaiss/omicash.git
 cd omicash
 bundle install
 bundle exec rake db:migrate
