@@ -1,6 +1,7 @@
 class NotificationsController < ApplicationController
   before_action :set_notification, only: [:show, :edit, :update, :destroy]
   before_filter :authorize
+  before_filter :venmo_authorize
 
   # GET /notifications
   # GET /notifications.json

@@ -1,3 +1,63 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+* {
+  border-radius:0 !important;
+}
+
+html body {
+  background-color:#EEF0F4;
+  padding:2rem;
+  font-family: Helvetica, Arial;
+}
+
+.col,
+.form-group .field .row {
+  margin:0;
+  padding:0;
+}
+
+.omiForm {
+  padding:1.5rem;
+}
+
+a {
+  color: #3C95D2;
+  text-decoration: none;
+}
+
+.btn-venmo {
+  background-color: #3C95D2;
+  color:white;
+  margin-top:1rem;
+  margin-bottom: 1rem;
+}
+
+.notification_list {
+  border-color:gray;
+  border-width:1px;
+  border-style: solid;
+  border-bottom:none;
+}
+
+.notification_item {
+  background-color: #F8F8F8;
+  border-bottom-color: rgb(204, 204, 204);
+  border-bottom-width:1px;
+  border-bottom-style:solid;
+  border-left:none;
+  border-right:none;
+  border-top:none;
+}
+
+.show_notif_card {
+  background-color: #F8F8F8;
+  border-color: rgb(204, 204, 204);
+  border-width:1px;
+  border-style:solid;
+  padding-left:1rem;
+  padding-right:1rem;
+}

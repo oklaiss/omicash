@@ -1,81 +1,96 @@
 
-      <ul class="nav pull-right" id="loginDropdown">
-      	<li class="dropdown" id="menuLogin">
-      		<span>
-      			<a class="dropdown-toggle btn btn-dark-2" href="#" data-toggle="dropdown" id="navLogin">Login</a>
-      			<div class="dropdown-menu" style="padding:17px;">
-              <%= form_tag '/login' do %>
 
-              Email: <%= text_field_tag :email %>
-              Password: <%= password_field_tag :password %>
-              <%= submit_tag "Submit", class: "btn btn-dark" %>
+      <nav class="navbar navbar-default" id="landingNav">
+        <div class="container-fluid">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="navbar-header" style="margin-left:0px;padding-left:0px;">
 
-              <% end %>
+              <!-- <a class="navbar-brand" href="#" style="color:white;">OmiCash</a> -->
+              <a><%= link_to '<b><i>Omicash</i></b>'.html_safe, notifications_path, {:style => 'color: #3C95D2; font-size:26px;', :class => "navbar-brand"} %></a>
             </div>
-          </span>
-          <span>
-           <%= link_to 'Sign Up', '/signup', class: "btn btn-dark" %>
-         </span>
-       </li>
-     </ul>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right" style="margin-right:0px;padding-right:0px;">
+                <li class="dropdown" id="menuLogin">
 
-     <!-- Header -->
-     <header id="top" class="header">
-       <div class="text-vertical-center">
-        <h1>OmiCash</h1>
-        <h3>Repayment Reminders Made Easy </h3>
-        <br>
-      </div>
-    </header>
-  <!-- Footer -->
-  <footer>
-  	<div class="container">
-  		<div class="row">
-  			<div class="col-lg-10 col-lg-offset-1 text-center">
-  				</h4>
-  				<p>Owen Klaiss</p>
-  				<ul class="list-unstyled">
-  					<!--  <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li> -->
-  					<li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:oklaiss@smu.edu">oklaiss@smu.edu</a>
-  					</li>
-  				</ul>
-                      <hr class="small">
-                      <p class="text-muted">Powered by</p>
-                      <%= image_tag("rails-logo.png", :class => "img-responsive img-full", :style => "height:100px; margin:auto;") %>
-                      <br>
+              			<a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color:#3C95D2; font-size:16px;">
+                      Sign in <i class="glyphicon glyphicon-lock" style="margin-left:1rem;"></i>
+                    </a>
+              			<div class="dropdown-menu" style="padding:20px;">
+                    <!--  <form class="form" id="formLogin">
+                        <input name="username" id="username" type="text" placeholder="Username">
+                        <input name="password" id="password" type="password" placeholder="Password"><br>
+                        <button type="button" id="btnLogin" class="btn">Login</button>
+                      </form>-->
+                      <%= form_tag '/login' do %>
+
+                      Email: <%= email_field_tag :email %>
+                      Password: <%= password_field_tag :password %>
+                      <%= submit_tag "Submit", class: "btn btn-venmo" %>
+
+                      <% end %>
                     </div>
-                  </div>
-                </div>
-              </footer>
+               </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
-              <!-- Custom Theme JavaScript -->
-    <!-- <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
 
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
+<!-- Services -->
+<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+<section id="services" class="services bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" id="imageSection">
+          <div id="iphone"></div>
+        </div>
+        <div class="col-lg-5 text-center" id="welcomeSection">
+          <div id="welcome">
+            <h1>Quick and easy payment reminders.</h1>
+            <h4>Get your money back!</h4>
+          </div>
+          <%= link_to 'Sign up with Venmo'.html_safe, '/signup', {:class=>"btn btn-venmo", :style=>"font-size:22px; font-weight:500;"} %>
+        </div>
+      </div>
+    </div>
+</section>
 
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
 
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-    </script> -->
+<!-- Footer -->
+<footer>
+  <hr class="large">
+	<div class="container-fluid">
+		<div class="row">
+      <div class="col-lg-4 text-center">
+        <br>
+        <h5>Lead Developers</h5>
+        <p class="lead" style="font-size:14px">
+          Owen Klaiss<br>
+          Christian Green<br>
+          Kristofor Horst<br>
+          Avery Ferrante
+        </p>
+      </div>
+			<div class="col-lg-4 text-center">
+				<h3><strong>m3thod</strong></h3>
+				<p>Southern Methodist University<br>Dallas, TX 75075</p>
+
+				<ul class="list-unstyled">
+					<li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:oklaiss@smu.edu">oklaiss@smu.edu</a>
+					</li>
+				</ul>
+      </div>
+      <div class="col-lg-4 text-center">
+        <br>
+        <p class="text-muted" style="font-size:0.8em;">Powered by</p>
+        <%= image_tag("rails-logo.png", :class => "img-responsive", :style => "height:45px; margin:auto;") %>
+        <br>
+        <p class="text-muted" style="font-size:0.8em;">Copyright &copy; OmiCash,<br>A m3thod product 2016</p>
+      </div>
+    </div>
+  </div>
+</footer>

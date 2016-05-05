@@ -1,12 +1,15 @@
+<!--
 <div class="col-md-8 col-md-offset-4" style="margin-top:3%">
   <p id="notice"><%= notice %></p>
+-->
 
-  <div class="row">
-    <div class="col-md-6">
+  <div class="row" style="margin-top:3%">
+    <div class="col-md-8 col-md-offset-2">
+      <h2>Notification Details</h2><br>
       <div class="card show_notif_card">
         <div class="card-block">
           <h3 class="card-title">
-            <b> <%= @notification.name %> </b>
+            <b><%= @notification.name %> </b>
             <%= link_to '<i class="glyphicon glyphicon-pencil"></i> edit'.html_safe, edit_notification_path(@notification), class:"btn"%>
           </h3>
           <p class="card-text">
@@ -14,7 +17,7 @@
               <div class="col-sm-5">
                 <b>Email:</b> <%= @notification.email %> <br>
                 <b>Phone:</b> <%= @notification.phone_number %> <br>
-                <b>Repeat:</b> <%= @notification.duration %> times (every <%= @notification.frequency %> hours) <br>
+                <b>Repeat:</b> <%= @notification.duration/@notification.frequency %> times (every <%= @notification.frequency %> hours) <br>
                 <b>Active:</b> <%= @notification.is_active %>
               </div>
               <div class="col-sm-7">
@@ -27,8 +30,9 @@
       </div>
     </div>
   </div>
+  <br>
 
-  <%= link_to 'My Notifications'.html_safe, notifications_path, class:"btn btn-venmo" %>
+
+  <%= link_to 'My Notifications'.html_safe, notifications_path, class:"btn btn-venmo col-md-offset-2" %>
 
 </div>
-

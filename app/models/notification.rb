@@ -1,4 +1,5 @@
 class Notification < ActiveRecord::Base
+	# validates :name, :email, :message_text, :phone_number, :duration, :frequency, :user_id
 	belongs_to :user
 	after_create :send_initial_notif
 
@@ -51,10 +52,11 @@ class Notification < ActiveRecord::Base
 	def push_notification_now
 		# Push ActiveMailer
 		NotificationMailer.notification_email(self, self.user).deliver
+		self.message_text = 'Hi ' + self.name + ', ' + self.message_text + ' - Sent with love via OmiCash'
 
 		# make Twilio calls
-		account_sid = 'ACb7ab149eb0706c444c6fe00f688c45de'
-		auth_token = '99090f489e89597e5f58cda4adee0bef'
+		account_sid = 'myTwilioAccountSid'
+		auth_token = 'myTwilioAuthToken'
 		to_number = self.phone_number
 		message_body = self.message_text
 

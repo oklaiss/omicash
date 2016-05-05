@@ -2,6 +2,8 @@
 
 <div class="row" style="margin-top:3%">
   <div class="col-sm-8 col-md-offset-2">
+    <h2>Your Notifications</h2>
+    <br>
     <div class="list-group notification_list">
       <div class="list-group-item disabled">
         <div class="row">
@@ -18,7 +20,7 @@
             <div class="col-sm-3">
               <b><%= link_to notification.name, notification%></b><br>
               (every <%= notification.frequency %> hrs)<br>
-              <%= notification.last_sent.strftime("%d/%m/%y: %H:%M:%S") %>
+              <%= notification.last_sent%>
             </div>
             <div class="col-sm-7 text-wrap">
               <%= notification.message_text.truncate(110, omission: '... (continued)')%>
@@ -31,11 +33,13 @@
             </div>
           </div>
       </div>
+
       <% end %>
     </div>
     <div>
-      <%= link_to 'New Notification', new_notification_path,  class: "btn btn-venmo" %>
+      <%= link_to '<i class="glyphicon glyphicon-plus"></i> New Notification'.html_safe, new_notification_path,  class: "btn btn-venmo" %>
     </div>
+
 
     <!--
     <table class="table" id="notifications_table">

@@ -1,0 +1,65 @@
+<div class="col-md-8 col-md-offset-2" style="margin-top:3%;">
+	<h1>Enter Your Venmo Credentials</h1>
+
+	<%= form_for(@user) do |f| %>
+	<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<br>
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="card show_notif_card">
+				<div class="card-block">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form omiForm">
+								<div class="form-group">
+									<div class="field">
+										<div class="row">
+											<div class="col-sm-5 text-right">
+												<%= f.label :venmo_username %>
+											</div>
+											<div class="col-sm-6">
+												<%= f.text_field :venmo_username, :required => true %>
+											</div>
+										</div>
+									</input>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="field">
+									<div class="row">
+										<div class="col-sm-5 text-right">
+											<%= f.label :venmo_password %>
+										</div>
+										<div class="col-sm-6">
+											<%= f.password_field :venmo_password, :required => true %>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> <!--End form-->
+					</div>
+				</div>
+			</div> <!--End Card Block-->
+		</div>
+	</div>
+</div>
+<br>
+<%= f.submit "Save Changes", :class => "btn btn-venmo" %>
+
+
+
+<% end %>
+
+
+</div>

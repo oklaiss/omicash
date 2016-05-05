@@ -29,8 +29,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Twilio for sms-messaging
 gem 'twilio-ruby'
 
-#Figaro
+# Figaro
 gem 'figaro'
+
+# Testing (RSPEC)
+gem 'rspec-rails'
+gem 'factory_girl_rails'
+gem 'faker'
+gem 'capybara'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
